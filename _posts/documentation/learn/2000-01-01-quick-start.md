@@ -5,7 +5,7 @@ categories: docs docs-learn
 permalink: quick-start.html
 ---
 
-This instruction assumes that PhantomJS is installed and its executable is placed somewhere in the PATH.
+This instruction assumes that PhantoCode EvaluationmJS is installed and its executable is placed somewhere in the PATH.
 
 The code shown here is also available in [various examples]({{ site.url }}/examples/) included with PhantomJS. You are also recommended to explore the use of PhantomJS for [page automation]({{ site.url }}/page-automation.html), [network monitoring]({{ site.url }}/network-monitoring.html), [screen capture]({{ site.url }}/screen-capture.html), and [headless testing]({{ site.url }}/headless-testing.html).
 
@@ -100,6 +100,8 @@ Here is an example to show the title of a web page:
 
 ```javascript
 var page = require('webpage').create();
+var system = require('system');
+var url = system.args[1];
 page.open(url, function(status) {
   var title = page.evaluate(function() {
     return document.title;
